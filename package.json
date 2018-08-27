@@ -1,0 +1,32 @@
+{
+  "name": "electron-desktop-gmail-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratapdd/electron-desktop-gmail-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pratapdd/electron-desktop-gmail-app/issues"
+  },
+  "homepage": "https://github.com/pratapdd/electron-desktop-gmail-app#readme",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "electron": "^2.0.8",
+    "electron-packager": "^12.1.1"
+  },
+  "dependencies": {
+    "electron-context-menu": "^0.10.0"
+  },
+  "scripts": {
+    "package:linux": "cross-env NODE_ENV=prod electron-packager ./ --out=./builds --overwrite --platform=linux  --icon=gmail",
+    "package:macappstore": "cross-env NODE_ENV=prod electron-packager ./ --out=./builds --overwrite --platform=mas  --icon=gmail",
+    "package:osx": "cross-env NODE_ENV=prod electron-packager ./ --out=./builds --overwrite --platform=darwin  --icon=gmail",
+    "package:win": "cross-env NODE_ENV=prod electron-packager ./ --out=./builds --overwrite --platform=win32  --icon=gmail",
+    "package:all": "cross-env NODE_ENV=prod electron-packager ./ --out=./builds --overwrite --platform=all  --icon=gmail",
+    "start": "cross-env NODE_ENV=dev electron index.js"
+  }
+}
